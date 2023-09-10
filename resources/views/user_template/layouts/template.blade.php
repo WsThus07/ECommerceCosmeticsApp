@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ asset('home/css/aos.css')}}">
 
     <link rel="stylesheet" href="{{ asset('home/css/style.css')}}">
+@stack('scripts')
 
   </head>
   <body>
@@ -37,7 +38,7 @@
         <div class="d-flex align-items-center justify-content-between">
           <div class="logo">
             <div class="site-logo">
-              <a href="#" class="js-logo-clone">ElegantMe</a>
+              <a href="{{ route('Home') }}" class="js-logo-clone">ElegantMe</a>
             </div>
           </div>
           <div class="main-nav d-none d-lg-block">

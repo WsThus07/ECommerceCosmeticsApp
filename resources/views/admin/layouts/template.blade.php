@@ -41,12 +41,16 @@
     <link rel="stylesheet" href="{{ asset('dashboard/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
 
     <link rel="stylesheet" href="{{ asset('dashbaord/assets/vendor/libs/apex-charts/apex-charts.css') }}" />
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.20.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+    
     <!-- Page CSS -->
 
     <!-- Helpers -->
     <script src="{{ asset('dashboard/assets/vendor/js/helpers.js') }}"></script>
     <script src="{{ asset('dashboard/assets/js/config.js') }}"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    @stack('scripts')
   </head>
 
   <body>
@@ -59,7 +63,7 @@
           <div class="app-brand demo">
             <a href="index.html" class="app-brand-link">
 
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">ElegantB</span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2">ElegantMe</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -176,7 +180,7 @@
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- Place this tag where you want the button to render. -->
                 <li class="nav-item lh-1 me-3">
-                  
+
                 </li>
 
                 <!-- User -->
@@ -211,8 +215,8 @@
                         <span class="align-middle">My Profile</span>
                       </a>
                     </li>
-                    
-                    
+
+
                     <li>
                       <div class="dropdown-divider"></div>
                     </li>

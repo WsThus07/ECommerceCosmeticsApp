@@ -36,11 +36,7 @@ Route::controller(ClientController::class)->group(function () {
 
 Route::middleware(['auth', 'role:user'])->group(function () {
 
-    Route::controller(ProfileController::class)->group(function () {
-        Route::get('/user-profile/history', 'edit')->name('profile.edit');
-        Route::patch('/user-profile/history', 'update')->name('profile.update');
-        Route::delete('/user-profile/history', 'destroy')->name('profile.destroy');
-    });
+
 
     Route::controller(ClientController::class)->group(function () {
 
@@ -61,8 +57,14 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::controller(ProfileController::class)->group(function () {
+        Route::get('/profile', 'edit')->name('profile.edit');
+        Route::patch('/profile', 'update')->name('profile.update');
+        Route::delete('/profile', 'destroy')->name('profile.destroy');
+    });
     Route::controller(DashboardController::class)->group(function () {
         Route::get('/admin/dashboard', 'Index')->name('admindashboard');
+
     });
     Route::controller(CategoryController::class)->group(function () {
         Route::get('/admin/all-category', 'Index')->name('allcategory');
@@ -101,7 +103,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
 Route::get('/logout', 'AuthenticationSessionController@destroy')->name('logout');
 
-
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
 
 require __DIR__ . '/auth.php';

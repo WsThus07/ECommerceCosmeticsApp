@@ -3,19 +3,14 @@
 
 <!-- most rated -->
 <div class="site-blocks-cover" data-aos="fade">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 ml-auto order-md-2 align-self-start">
-          <div class="site-block-cover-content">
-          <h2 class="sub-title">#New Summer Collection 2019</h2>
-          <h1>Arrivals Sales</h1>
-          <p><a href="#" class="btn btn-black rounded-0">Shop Now</a></p>
-          </div>
+    <div class="">
+        <div class="video-background">
+            <video autoplay loop muted>
+                <source src="{{ asset('home/images/Elegantme.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
         </div>
-        <div class="col-md-6 order-1 align-self-end">
-          <img src="{{ asset('home/images/model_3.png') }}" alt="Image" class="img-fluid">
-        </div>
-      </div>
     </div>
   </div>
   <!-- most rated -->
@@ -48,12 +43,10 @@
 <div class="box-main">
     <form action="{{ route('addproducttocart') }}" method="POST" >
     @csrf
-
     <input type="hidden" value="{{ $product->id }}" name="product_id">
     <input type="hidden" value="{{ $product->price }}" name="price">
     <input type="hidden" value="1" name="quantity">
    <input type="submit" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary" value="Buy">
-
   </form>
 </div>
                 <div class="star-rating">

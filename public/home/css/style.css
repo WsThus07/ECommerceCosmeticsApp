@@ -12,7 +12,43 @@ body {
 ::selection {
   background: #000;
   color: #fff; }
+  .video-background {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      /* Adjust as needed */
+      overflow: hidden;
+  }
 
+  .video-background video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Ensures the video covers the entire div */
+      z-index: -1;
+      /* Places the video behind other content */
+  }
+
+.content {
+    position: relative;
+    z-index: 1;
+    /* Places content above the video */
+    text-align: center;
+    color: #fff;
+    /* Text color */
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 36px;
+}
+
+.content p {
+    font-size: 18px;
+}
 a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
